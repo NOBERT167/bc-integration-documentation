@@ -1,16 +1,20 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import {
   Boxes,
+  Bug,
   Check,
   ChevronRight,
   CircleHelp,
   Clipboard,
   Code2,
+  Coffee,
   Copy,
+  CupSoda,
   Database,
   ExternalLink,
   FileCode2,
   GitFork,
+  Heart,
   KeyRound,
   Menu,
   Moon,
@@ -18,7 +22,9 @@ import {
   Play,
   Search,
   Server,
+  Share2,
   ShieldCheck,
+  Star,
   Sun,
   Terminal,
   X,
@@ -50,6 +56,9 @@ const packageName = "@nobertdev/bc-intergration-starter";
 const githubUrl = "https://github.com/NOBERT167/bc-intergration-starter";
 const npmUrl =
   "https://www.npmjs.com/package/@nobertdev/bc-intergration-starter";
+const issuesUrl = `${githubUrl}/issues`;
+const buyMeACoffeeUrl = "https://buymeacoffee.com/nobertdev";
+const buyMeASodaUrl = "https://buymesoda.com/QWqdC7NvwdcTVja0YJH2v6NwxJC2";
 
 const navGroups = [
   {
@@ -76,6 +85,10 @@ const navGroups = [
       { id: "run-project", label: "Run the project" },
       { id: "troubleshooting", label: "Troubleshooting" },
     ],
+  },
+  {
+    label: "Community",
+    items: [{ id: "support", label: "Support the project" }],
   },
 ];
 
@@ -425,6 +438,9 @@ function App() {
           </a>
           <a href={npmUrl} target="_blank" rel="noreferrer">
             <Package size={16} /> npm package <ExternalLink size={13} />
+          </a>
+          <a href={buyMeACoffeeUrl} target="_blank" rel="noreferrer">
+            <Coffee size={16} /> Buy me a coffee <ExternalLink size={13} />
           </a>
         </div>
       </aside>
@@ -986,6 +1002,104 @@ function App() {
               </details>
             </div>
           </section>
+
+          <section
+            id="support"
+            className="scroll-mt-8 border-t py-10 pt-28 max-[760px]:pt-20"
+          >
+            <SectionHeading
+              eyebrow="10 — Support"
+              title="Support the project"
+              description="The starter is free to use and maintained in the open. If it saved your team a day of wiring OData, SOAP, and JWT by hand, a small tip keeps the releases and this documentation coming."
+            />
+            <div className="grid grid-cols-2 gap-4 max-[760px]:grid-cols-1">
+              <Card className="gap-0 rounded-[0.9rem_0.9rem_0.3rem_0.9rem] border p-7">
+                <CardHeader className="p-0 [&>svg]:text-primary">
+                  <Coffee size={22} />
+                  <CardTitle className="mt-4 mb-3 text-base">
+                    Buy me a coffee
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-1 flex-col justify-between gap-6 p-0">
+                  <CardDescription className="text-sm leading-7">
+                    The international page. Send a one-off tip in your own
+                    currency, or back the project every month.
+                  </CardDescription>
+                  <a
+                    className="inline-flex min-h-10 items-center gap-2 rounded-lg bg-primary px-3.5 py-2 text-sm font-semibold text-primary-foreground no-underline transition-transform hover:-translate-y-px"
+                    href={buyMeACoffeeUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <Coffee size={16} /> buymeacoffee.com/nobertdev
+                    <ExternalLink size={13} className="ml-auto opacity-70" />
+                  </a>
+                </CardContent>
+              </Card>
+              <Card className="gap-0 rounded-[0.3rem_0.9rem_0.9rem_0.9rem] border bg-muted p-7">
+                <CardHeader className="p-0 [&>svg]:text-primary">
+                  <CupSoda size={22} />
+                  <CardTitle className="mt-4 mb-3 text-base">
+                    Buy me a soda
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="flex flex-1 flex-col justify-between gap-6 p-0">
+                  <CardDescription className="text-sm leading-7">
+                    A support page built for Kenyan creators. Use this one if it
+                    is the easier checkout for you.
+                  </CardDescription>
+                  <a
+                    className="inline-flex min-h-10 items-center gap-2 rounded-lg border bg-card px-3.5 py-2 text-sm font-semibold text-foreground no-underline transition-colors hover:border-primary/40 hover:text-primary"
+                    href={buyMeASodaUrl}
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    <CupSoda size={16} /> Open the soda page
+                    <ExternalLink size={13} className="ml-auto opacity-70" />
+                  </a>
+                </CardContent>
+              </Card>
+            </div>
+
+            <h3 className="mt-10 mb-2 text-base">Free ways to help</h3>
+            <p className="m-0 mb-5 max-w-[62ch] text-sm leading-7 text-muted-foreground">
+              Sponsorship is optional. These cost nothing and still move the
+              project forward.
+            </p>
+            <div className="grid grid-cols-3 gap-4 max-[760px]:grid-cols-1 [&>a]:grid [&>a]:content-start [&>a]:gap-2 [&>a]:rounded-xl [&>a]:border [&>a]:bg-card [&>a]:p-5 [&>a]:no-underline [&>a]:transition-colors [&>a:hover]:border-primary/40 [&_strong]:flex [&_strong]:items-center [&_strong]:gap-2 [&_strong]:text-sm [&_strong]:font-semibold [&_strong]:text-foreground [&_p]:m-0 [&_p]:text-xs [&_p]:leading-6 [&_p]:text-muted-foreground [&_svg]:shrink-0 [&_svg]:text-primary">
+              <a href={githubUrl} target="_blank" rel="noreferrer">
+                <strong>
+                  <Star size={16} /> Star the repository
+                </strong>
+                <p>
+                  A star helps other Business Central teams find the generator.
+                </p>
+              </a>
+              <a href={issuesUrl} target="_blank" rel="noreferrer">
+                <strong>
+                  <Bug size={16} /> Report an issue
+                </strong>
+                <p>
+                  Bug reports and prompt feedback decide what ships in the next
+                  release.
+                </p>
+              </a>
+              <a href={npmUrl} target="_blank" rel="noreferrer">
+                <strong>
+                  <Share2 size={16} /> Share the package
+                </strong>
+                <p>Pass the npm page to the next team starting a BC portal.</p>
+              </a>
+            </div>
+
+            <Alert className="mt-6 gap-x-3 border-accent bg-accent text-accent-foreground [&_[data-slot=alert-description]]:text-accent-foreground">
+              <Heart size={18} />
+              <AlertTitle>Thank you</AlertTitle>
+              <AlertDescription>
+                Every tip, issue, and star goes straight back into the starter.
+              </AlertDescription>
+            </Alert>
+          </section>
         </article>
 
         <footer className="mx-auto mt-20 flex w-[min(calc(100%_-_3rem),72rem)] items-center justify-between border-t py-8 text-xs text-muted-foreground max-[760px]:w-[min(calc(100%_-_2rem),42rem)] max-[760px]:items-start max-[760px]:gap-4 max-[520px]:w-[min(calc(100%_-_1.4rem),42rem)] max-[520px]:flex-col [&>div]:flex [&>div]:items-center [&>div]:gap-2.5 [&_p]:m-0 [&_strong]:block [&_a]:font-semibold [&_a]:text-primary [&_a]:no-underline">
@@ -1006,6 +1120,11 @@ function App() {
               rel="noreferrer"
             >
               Nobert.Dev
+            </a>
+            <span className="px-2 text-border">·</span>
+            <a href="#support">
+              <Heart size={13} className="mr-1 inline align-[-1px]" />
+              Support the project
             </a>
           </p>
         </footer>
