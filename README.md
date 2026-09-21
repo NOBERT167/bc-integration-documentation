@@ -2,6 +2,10 @@
 
 Documentation website for [`@nobertdev/bc-intergration-starter`](https://www.npmjs.com/package/@nobertdev/bc-intergration-starter).
 
+## Live documentation
+
+[Open the published documentation](https://bc-integration-documentation.vercel.app/).
+
 ## Local development
 
 ```sh
